@@ -1,0 +1,1 @@
+# No code for this day, I solved it on a calculator like a regular quadratic equation
