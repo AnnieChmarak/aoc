@@ -4,8 +4,8 @@ import importlib
 from aocd import submit
 from aocd.models import Puzzle
 
-def load_solution(day: int):
-    solution_module = importlib.import_module(f"{day}")
+def load_solution(year: int, day: int):
+    solution_module = importlib.import_module(f"{year}.{day}")
     return solution_module
 
 def check_result(part: str, calculated, expected: str) -> bool:
@@ -25,7 +25,7 @@ def main():
     assert puzzle is not None
 
     try:
-        solution = load_solution(day)
+        solution = load_solution(year, day)
     except ImportError:
         print(f"Solution for day {day} not found.")
 
